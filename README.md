@@ -11,6 +11,7 @@ This script automates the necessary workarounds. It abandons the broken Xorg bac
 ### Key Script Features
 * **Idempotent Execution:** The script checks if configurations are already applied before modifying files. It is safe to re-run if you think something broke.
 * **Active Session Guardrail:** If you accidentally run this script while actively connected via an Enhanced Session, it will detect the `xrdp-chansrv` process and abort. Restarting XRDP while inside it causes a "zombie" session lock, so the script prevents you from nuking your own desktop.
+* **Dynamic Resolution & Ultrawide Support:** Because the display transport is properly negotiated, you can use the Hyper-V slider to scale the VM to your monitor's exact native resolution.
 
 ## Prerequisites
 1.  A **Generation 2** Hyper-V Virtual Machine.
