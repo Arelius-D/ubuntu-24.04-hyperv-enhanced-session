@@ -14,9 +14,10 @@ This script automates the necessary workarounds. It abandons the broken Xorg bac
 
 ## Prerequisites
 1.  A **Generation 2** Hyper-V Virtual Machine.
-2.  Installed from the vanilla Canonical Ubuntu Desktop 24.04 ISO.
-3.  During Ubuntu installation, **Require my password to log in** MUST be checked. XRDP will not work with auto-login.
-4.  Your Hyper-V host must have Enhanced Session Mode allowed in its settings. You can enable this via an Admin PowerShell on Windows:
+2.  In the VM Settings under **Security**, you MUST check **Enable Secure Boot** and change the Template to **Microsoft UEFI Certificate Authority**. (Without this, the Ubuntu ISO will not boot).
+3.  Installed from the standard, official Ubuntu Desktop 24.04 ISO (Do NOT use Hyper-V's 'Quick Create' feature).
+4.  During Ubuntu installation, **Require my password to log in** MUST be checked. XRDP will not work with auto-login.
+5.  Your Hyper-V host must have Enhanced Session Mode allowed in its settings. You can enable this via an Admin PowerShell on Windows:
     ```powershell
     Set-VMHost -EnableEnhancedSessionMode $true
     Set-VM -VMName "Your_VM_Name" -EnhancedSessionTransportType HvSocket
